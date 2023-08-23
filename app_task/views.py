@@ -19,7 +19,7 @@ def cadastro(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 # Isso é um código q o próprio django tem de autenticação de usuário
-                user = User.objects.create_user(username=request.POST['email'], password=  request.POST['passwword1'])
+                user = User.objects.create_user(username=request.POST['email'], password=  request.POST['password1'])
                 user.save()
                 login(request, user)
                 return redirect('login')
